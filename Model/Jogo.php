@@ -9,10 +9,10 @@ class Jogo {
 	private $mandante;
 	private $visitante;	
 	private $dataHora;
-	private $resultado;
 	private $golsMandante;	
-	private $golsVisitante;	
-	
+	private $golsVisitante;
+		
+	private $resultado;
 	private $concurso;
 
 	function __construct() {
@@ -57,15 +57,7 @@ class Jogo {
 
 	function setDataHora($dataHora) {
 		$this->dataHora = $dataHora;
-	}
-
-	function getResultado() {
-		retunr $this->resultado;
-	}
-
-	function setResultado($resultado) {
-		$this->resultado = $resultado;
-	}
+	}	
 
 	function getGolsMandante() {
 		retunr $this->golsMandante;
@@ -81,6 +73,14 @@ class Jogo {
 
 	function setGolsVisitante($golsVisitante) {
 		$this->golsVisitante = $golsVisitante;
+	}
+
+	function getResultado() {
+		retunr $this->resultado;
+	}
+
+	function setResultado($resultado) {
+		$this->resultado = $resultado;
 	}
 
 	function getConcurso() {

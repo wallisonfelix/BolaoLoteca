@@ -9,8 +9,8 @@ class Palpite {
 	private $id;	
 	private $dataHora;
 	private $ativo;	
-	private $tipoAposta;
 	
+	private $tipoPalpite;
 	private $cartaoAposta;
 	private $jogo;
 	private $resultados;	
@@ -45,12 +45,12 @@ class Palpite {
 		$this->ativo = $ativo;
 	}
 
-	function getTipoAposta() {
-		retunr $this->tipoAposta;
+	function getTipoPalpite() {
+		retunr $this->tipoPalpite;
 	}
 
-	function setTipoAposta($tipoAposta) {
-		$this->tipoAposta = $tipoAposta;
+	function setTipoPalpite($tipoPalpite) {
+		$this->tipoPalpite = $tipoPalpite;
 	}
 
 	function getCartaoAposta() {

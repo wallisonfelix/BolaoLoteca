@@ -11,6 +11,7 @@ class Concurso {
 	private $dataInicio;
 	private $dataFim;
 	private $cartaoApostaFinal;
+	private $ativo;
 
 	private $possibilidadeAposta;	
 	private $jogos;
@@ -61,6 +62,14 @@ class Concurso {
 	function setCartaoApostaFinal($cartaoApostaFinal) {
 		$this->cartaoApostaFinal = $cartaoApostaFinal;
 	}	
+
+	function getAtivo() {
+		retunr $this->ativo;
+	}
+
+	function setAtivo($ativo) {
+		$this->ativo = $ativo;
+	}
 
 	function getPossibilidadeAposta() {
 		retunr $this->possibilidadeAposta;

@@ -9,6 +9,7 @@ class Usuario {
 	private $nome;
 	private $cpf;
 	private $email;	
+	private $senha;	
 	private $ativo;
 
 	private $dadosBancario;
@@ -49,6 +50,14 @@ class Usuario {
 
 	function setEmail($email) {
 		$this->email = $email;
+	}
+
+	function getSenha() {
+		retunr $this->senha;
+	}
+
+	function setSenha($senha) {
+		$this->senha = $senha;
 	}
 
 	function getAtivo() {
