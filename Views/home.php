@@ -31,7 +31,7 @@
 
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-      <a class="navbar-brand mr-1" href="home.html">
+      <a class="navbar-brand mr-1" href="?pagina=home">
         <img class="img-fluid" src=".././images/logo_loteca.jpg" alt="Logo da Loteca" width="200px">
       </a>
 
@@ -46,9 +46,9 @@
             <i class="fas fa-user-circle fa-fw"></i>
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-            <a class="dropdown-item" href="#">Cadastro</a>            
+            <a class="dropdown-item" href="?pagina=edicao_usuario">Cadastro</a>            
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Sair</a>
+            <a class="dropdown-item" href="../login.php" data-toggle="modal" data-target="#logoutModal">Sair</a>
           </div>
         </li>
       </ul>
@@ -60,25 +60,25 @@
       <!-- Sidebar -->
       <ul class="sidebar navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="home.html">
+          <a class="nav-link" href="?pagina=home">
             <i class="fas fa-fw fa-binoculars"></i>
             <span>Home</span>
           </a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="home.html">
+          <a class="nav-link" href="?pagina=cadastro_aposta">
             <i class="fas fa-fw fa-plus"></i>
             <span>Cadastrar Aposta</span>
           </a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="home.html">
+          <a class="nav-link" href="?pagina=edicao_aposta">
             <i class="fas fa-fw fa-recycle"></i>
             <span>Atualizar Aposta</span>
           </a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="home.html">
+          <a class="nav-link" href="?pagina=listagem_concurso">
             <i class="fas fa-fw fa-archive"></i>
             <span>Concursos Anteriores</span>
           </a>
@@ -90,29 +90,23 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="pagesDropdown">
             <h6 class="dropdown-header">Cadastros:</h6>
-            <a class="dropdown-item" href="home.html">Bancos</a>
-            <a class="dropdown-item" href="home.html">Usuários</a>
+            <a class="dropdown-item" href="?pagina=listagem_banco">Bancos</a>
+            <a class="dropdown-item" href="?pagina=listagem_usuario">Usuários</a>
             <div class="dropdown-divider"></div>
             <h6 class="dropdown-header">Apostas:</h6>
-            <a class="dropdown-item" href="home.html">Possibilidades</a>
-            <a class="dropdown-item" href="home.html">Concursos</a>
-            <a class="dropdown-item" href="home.html">Jogos</a>
+            <a class="dropdown-item" href="?pagina=listagem_possibilidade">Possibilidades</a>
+            <a class="dropdown-item" href="?pagina=listagem_concurso">Concursos</a>
+            <a class="dropdown-item" href="?pagina=listagem_jogo">Jogos</a>
           </div>
         </li>        
       </ul>
 
       <div id="content-wrapper">
 
-        <div id="conteudo" class="container-fluid">
-
-          <!-- Breadcrumbs-->
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-              <a href="#">Home</a>
-            </li>
-          </ol>         
-
-
+        <div id="conteudo" class="container-fluid">                
+          <?php
+            require_once(".././Util/RequestPage.php");
+          ?>
         </div>
         <!-- /.container-fluid -->
 
@@ -149,7 +143,7 @@
           <div class="modal-body">Click em Logout se realmente deseja encerrar esta sessão.</div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cencelar</button>
-            <a class="btn btn-primary" href="../login.html">Logout</a>
+            <a class="btn btn-primary" href="../login.php">Logout</a>
           </div>
         </div>
       </div>
