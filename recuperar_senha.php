@@ -11,7 +11,7 @@
 
     <title>Bolão da Loteca</title>
 
-    <link rel="icon" href="./images/dinheiro.ico" />
+    <link rel="icon" href="./images/icones/dinheiro.ico" />
 
     <!-- Bootstrap core CSS-->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -41,11 +41,11 @@
                 <label for="inputEmail">Email Cadastrado</label>
               </div>
             </div>
-            <a class="btn btn-primary btn-block" href="login.html">Recuperar Senha</a>
+            <a class="btn btn-primary btn-block" href="login.php">Recuperar Senha</a>
           </form>
           <div class="text-center">
-            <a class="d-block small mt-3" href="auto_cadastro.html">Auto Cadastro</a>
-            <a class="d-block small" href="login.html">Login</a>
+            <a class="d-block small mt-3" href="auto_cadastro.php">Auto Cadastro</a>
+            <a class="d-block small" href="login.php">Login</a>
           </div>
         </div>
       </div>

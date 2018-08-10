@@ -1,6 +1,6 @@
 <?php
 
-$pagina = filter_input(INPUT_GET, "pagina", FILTER_SANITIZE_STING);
+$pagina = filter_input(INPUT_GET, "pagina", FILTER_SANITIZE_STRING);
 
 $arrayPaginas = array(
 	"home" => ".././Views/home.php",

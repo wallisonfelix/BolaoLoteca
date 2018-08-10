@@ -11,7 +11,7 @@
 
     <title>Bolão da Loteca</title>
 
-    <link rel="icon" href=".././images/dinheiro.ico" />
+    <link rel="icon" href=".././images/icones/dinheiro.ico" />
 
     <!-- Bootstrap core CSS-->
     <link href=".././vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
