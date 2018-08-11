@@ -9,7 +9,7 @@ class Banco {
 	function __construct() { }
 
 	function getId() {
-		retunr $this->id;
+		return $this->id;
 	}
 
 	function setId($id) {
@@ -17,7 +17,7 @@ class Banco {
 	}
 
 	function getCodigo() {
-		retunr $this->codigo;
+		return $this->codigo;
 	}
 
 	function setCodigo($codigo) {
@@ -25,7 +25,7 @@ class Banco {
 	}
 
 	function getNome() {
-		retunr $this->nome;
+		return $this->nome;
 	}
 
 	function setNome($nome) {

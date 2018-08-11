@@ -11,6 +11,7 @@ class Usuario {
 	private $email;	
 	private $senha;	
 	private $ativo;
+	private $administrador;
 
 	private $dadosBancario;
 	private $cartoesAposta;
@@ -21,7 +22,7 @@ class Usuario {
 	}
 
 	function getId() {
-		retunr $this->id;
+		return $this->id;
 	}
 
 	function setId($id) {
@@ -29,7 +30,7 @@ class Usuario {
 	}
 
 	function getNome() {
-		retunr $this->nome;
+		return $this->nome;
 	}
 
 	function setNome($nome) {
@@ -37,7 +38,7 @@ class Usuario {
 	}
 
 	function getCpf() {
-		retunr $this->cpf;
+		return $this->cpf;
 	}
 
 	function setCpf($cpf) {
@@ -45,7 +46,7 @@ class Usuario {
 	}
 
 	function getEmail() {
-		retunr $this->email;
+		return $this->email;
 	}
 
 	function setEmail($email) {
@@ -53,7 +54,7 @@ class Usuario {
 	}
 
 	function getSenha() {
-		retunr $this->senha;
+		return $this->senha;
 	}
 
 	function setSenha($senha) {
@@ -61,15 +62,23 @@ class Usuario {
 	}
 
 	function getAtivo() {
-		retunr $this->ativo;
+		return $this->ativo;
 	}
 
 	function setAtivo($ativo) {
 		$this->ativo = $ativo;
 	}
 
+	function getAdministrador() {
+		return $this->ativo;
+	}
+
+	function setAdministrador($administrador) {
+		$this->administrador = $administrador;
+	}
+
 	function getDadosBancario() {
-		retunr $this->dadosBancario;
+		return $this->dadosBancario;
 	}
 
 	function setDadosBancario($dadosBancario) {
@@ -77,7 +86,7 @@ class Usuario {
 	}
 
 	function getCartoesAposta() {
-		retunr $this->cartoesAposta;
+		return $this->cartoesAposta;
 	}
 
 	function setCartoesAposta($cartoesAposta) {

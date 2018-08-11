@@ -22,7 +22,7 @@ class Palpite {
 	}
 
 	function getId() {
-		retunr $this->id;
+		return $this->id;
 	}
 
 	function setId($id) {
@@ -30,7 +30,7 @@ class Palpite {
 	}
 
 	function getDataHora() {
-		retunr $this->dataHora;
+		return $this->dataHora;
 	}
 
 	function setDataHora($dataHora) {
@@ -38,7 +38,7 @@ class Palpite {
 	}
 
 	function getAtivo() {
-		retunr $this->ativo;
+		return $this->ativo;
 	}
 
 	function setAtivo($ativo) {
@@ -46,7 +46,7 @@ class Palpite {
 	}
 
 	function getTipoPalpite() {
-		retunr $this->tipoPalpite;
+		return $this->tipoPalpite;
 	}
 
 	function setTipoPalpite($tipoPalpite) {
@@ -54,7 +54,7 @@ class Palpite {
 	}
 
 	function getCartaoAposta() {
-		retunr $this->cartaoAposta;
+		return $this->cartaoAposta;
 	}
 
 	function setCartaoAposta($cartaoAposta) {
@@ -62,7 +62,7 @@ class Palpite {
 	}
 
 	function getJogo() {
-		retunr $this->jogo;
+		return $this->jogo;
 	}
 
 	function setJogo($jogo) {
@@ -70,7 +70,7 @@ class Palpite {
 	}
 
 	function getResultados() {
-		retunr $this->resultados;
+		return $this->resultados;
 	}
 
 	function setResultados($resultados) {

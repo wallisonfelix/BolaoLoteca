@@ -10,7 +10,7 @@ class PossibilidadeAposta {
 	function __construct() { }
 
 	function getId() {
-		retunr $this->id;
+		return $this->id;
 	}
 
 	function setId($id) {
@@ -18,7 +18,7 @@ class PossibilidadeAposta {
 	}
 
 	function getValor() {
-		retunr $this->valor;
+		return $this->valor;
 	}
 
 	function setValor($valor) {
@@ -26,7 +26,7 @@ class PossibilidadeAposta {
 	}
 
 	function getQuantidadeDuplos() {
-		retunr $this->quantidadeDuplos;
+		return $this->quantidadeDuplos;
 	}
 
 	function setQuantidadeDuplos($quantidadeDuplos) {
@@ -34,7 +34,7 @@ class PossibilidadeAposta {
 	}
 
 	function getQuantidadeTriplos() {
-		retunr $this->quantidadeDuplos;
+		return $this->quantidadeDuplos;
 	}
 
 	function setQuantidadeTriplos($quantidadeTriplos) {

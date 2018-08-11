@@ -16,7 +16,7 @@ class DadosBancario {
 	}
 
 	function getId() {
-		retunr $this->id;
+		return $this->id;
 	}
 
 	function setId($id) {
@@ -24,7 +24,7 @@ class DadosBancario {
 	}
 
 	function getAgencia() {
-		retunr $this->agencia;
+		return $this->agencia;
 	}
 
 	function setAgencia($agencia) {
@@ -32,7 +32,7 @@ class DadosBancario {
 	}
 
 	function getConta() {
-		retunr $this->conta;
+		return $this->conta;
 	}
 
 	function setConta($conta) {
@@ -40,7 +40,7 @@ class DadosBancario {
 	}
 
 	function getInformacoesComplementares() {
-		retunr $this->informacoesComplementares;
+		return $this->informacoesComplementares;
 	}
 
 	function setInformacoesComplementares($informacoesComplementares) {
@@ -48,7 +48,7 @@ class DadosBancario {
 	}
 
 	function getBanco() {
-		retunr $this->banco;
+		return $this->banco;
 	}
 
 	function setBanco($banco) {

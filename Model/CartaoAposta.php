@@ -21,7 +21,7 @@ class CartaoAposta {
 	}
 
 	function getId() {
-		retunr $this->id;
+		return $this->id;
 	}
 
 	function setId($id) {
@@ -29,7 +29,7 @@ class CartaoAposta {
 	}
 
 	function getLabel() {
-		retunr $this->label;
+		return $this->label;
 	}
 
 	function setLabel($label) {
@@ -37,7 +37,7 @@ class CartaoAposta {
 	}
 
 	function isPago() {
-		retunr $this->cpf;
+		return $this->cpf;
 	}
 
 	function setPago($pago) {
@@ -45,7 +45,7 @@ class CartaoAposta {
 	}
 
 	function getUsuario() {
-		retunr $this->usuario;
+		return $this->usuario;
 	}
 
 	function setUsuario($usuario) {
@@ -53,7 +53,7 @@ class CartaoAposta {
 	}
 
 	function getConcurso() {
-		retunr $this->concurso;
+		return $this->concurso;
 	}
 
 	function setConcurso($concurso) {
@@ -61,7 +61,7 @@ class CartaoAposta {
 	}
 
 	function getPalpites() {
-		retunr $this->palpites;
+		return $this->palpites;
 	}
 
 	function setPalpites($palpites) {

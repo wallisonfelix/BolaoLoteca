@@ -20,7 +20,7 @@ class Jogo {
 	}
 
 	function getId() {
-		retunr $this->id;
+		return $this->id;
 	}
 
 	function setId($id) {
@@ -28,7 +28,7 @@ class Jogo {
 	}
 
 	function getPosicao() {
-		retunr $this->posicao;
+		return $this->posicao;
 	}
 
 	function setPosicao($posicao) {
@@ -36,7 +36,7 @@ class Jogo {
 	}
 
 	function getMandante() {
-		retunr $this->mandante;
+		return $this->mandante;
 	}
 
 	function setMandante($mandante) {
@@ -44,7 +44,7 @@ class Jogo {
 	}
 
 	function getVisitante() {
-		retunr $this->visitante;
+		return $this->visitante;
 	}
 
 	function setVisitante($visitante) {
@@ -52,7 +52,7 @@ class Jogo {
 	}
 
 	function getDataHora() {
-		retunr $this->dataHora;
+		return $this->dataHora;
 	}
 
 	function setDataHora($dataHora) {
@@ -60,7 +60,7 @@ class Jogo {
 	}	
 
 	function getGolsMandante() {
-		retunr $this->golsMandante;
+		return $this->golsMandante;
 	}
 
 	function setGolsMandante($golsMandante) {
@@ -68,7 +68,7 @@ class Jogo {
 	}
 
 	function getGolsVandante() {
-		retunr $this->golsMandante;
+		return $this->golsMandante;
 	}
 
 	function setGolsVisitante($golsVisitante) {
@@ -76,7 +76,7 @@ class Jogo {
 	}
 
 	function getResultado() {
-		retunr $this->resultado;
+		return $this->resultado;
 	}
 
 	function setResultado($resultado) {
@@ -84,7 +84,7 @@ class Jogo {
 	}
 
 	function getConcurso() {
-		retunr $this->concurso;
+		return $this->concurso;
 	}
 
 	function setConcurso($concurso) {

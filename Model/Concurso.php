@@ -24,7 +24,7 @@ class Concurso {
 	}
 
 	function getId() {
-		retunr $this->id;
+		return $this->id;
 	}
 
 	function setId($id) {
@@ -32,7 +32,7 @@ class Concurso {
 	}
 
 	function getCodigo() {
-		retunr $this->codigo;
+		return $this->codigo;
 	}
 
 	function setCodigo($codigo) {
@@ -40,7 +40,7 @@ class Concurso {
 	}
 
 	function getDataInicio() {
-		retunr $this->dataInicio;
+		return $this->dataInicio;
 	}
 
 	function setDataInicio($dataInicio) {
@@ -48,7 +48,7 @@ class Concurso {
 	}
 
 	function getDataFim() {
-		retunr $this->dataFim;
+		return $this->dataFim;
 	}
 
 	function setDataFim($dataFim) {
@@ -56,7 +56,7 @@ class Concurso {
 	}
 
 	function getCartaoApostaFinal() {
-		retunr $this->cartaoApostaFinal;
+		return $this->cartaoApostaFinal;
 	}
 
 	function setCartaoApostaFinal($cartaoApostaFinal) {
@@ -64,7 +64,7 @@ class Concurso {
 	}	
 
 	function getAtivo() {
-		retunr $this->ativo;
+		return $this->ativo;
 	}
 
 	function setAtivo($ativo) {
@@ -72,7 +72,7 @@ class Concurso {
 	}
 
 	function getPossibilidadeAposta() {
-		retunr $this->possibilidadeAposta;
+		return $this->possibilidadeAposta;
 	}
 
 	function setPossibilidadeAposta($possibilidadeAposta) {
@@ -80,7 +80,7 @@ class Concurso {
 	}
 
 	function getJogos() {
-		retunr $this->jogos;
+		return $this->jogos;
 	}
 
 	function setJogos($jogos) {
@@ -88,7 +88,7 @@ class Concurso {
 	}
 
 	function getCartoesAposta() {
-		retunr $this->cartoesAposta;
+		return $this->cartoesAposta;
 	}
 
 	function setCartoesAposta($cartoesAposta) {
