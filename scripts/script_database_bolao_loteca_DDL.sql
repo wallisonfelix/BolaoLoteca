@@ -23,6 +23,7 @@ CREATE TABLE cadastros.usuario (
     email varchar(128) NOT NULL UNIQUE,
     senha varchar(32) NOT NULL,
     ativo boolean NOT NULL DEFAULT TRUE,
+    administrador boolean NOT NULL DEFAULT FALSE,
     id_dados_bancario integer NOT NULL REFERENCES cadastros.dados_bancario (id)
 );
 CREATE SEQUENCE cadastros.usuario_sequence START 1;
