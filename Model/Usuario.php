@@ -41,7 +41,7 @@ class Usuario {
 		return $this->cpf;
 	}
 
-	function setCpf($cpf) {
+	function setCpf($cpf) {		
 		$this->cpf = $cpf;
 	}
 

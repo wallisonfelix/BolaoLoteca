@@ -1,8 +1,8 @@
 <?php
 
-require_once(".././DAO/UsuarioDAO.php");
-require_once(".././Model/Usuario.php");
-require_once(".././Model/DadosBancario.php");
+require_once("DAO/UsuarioDAO.php");
+require_once("Model/Usuario.php");
+require_once("Model/DadosBancario.php");
 
 class UsuarioController {
 
@@ -13,6 +13,9 @@ class UsuarioController {
 	}
 
 	public function cadastrarUsuario($usuario) {
+		$usuario->setCpf(str_replace(".", "", $usuario->getCpf()));
+		$usuario->setCpf(str_replace("-", "", $usuario->getCpf()));
+
 		if (FALSE) {
 			return "Já existe um usuário cadastrado com o CPF: " . $usuario->getCpf();
 		}

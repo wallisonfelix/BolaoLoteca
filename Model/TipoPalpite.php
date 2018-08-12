@@ -1,10 +1,12 @@
 <?php
 
-abstract class TipoPalpite extends BasicEnum {
+require_once("/Util/BasicEnum.php");
 
-    const SIMPLES = 1;
-    const DUPLO = 2;
-    const TRIPLO = 3;
+class TipoPalpite extends BasicEnum {
+
+    public const SIMPLES = 1;
+    public const DUPLO = 2;
+    public const TRIPLO = 3;
     
 }
 

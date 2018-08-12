@@ -18,7 +18,7 @@ class DataBase {
     public function __construct() {
             $this->debug = true;
             $this->server = "localhost";
-            $this->user = "admin";
+            $this->user = "postgres";
             $this->password = "admin";
             $this->database = "bolao_loteca";
     }
@@ -30,7 +30,7 @@ class DataBase {
     public function getConnection() {
         try {
             if (self::$connection == null) {
-                self::$connection = new PDO("mysql:host={$this->server};dbname={$this->database};charset=utf8", $this->user, $this->password);
+                self::$connection = new PDO("pgsql:host=" . $this->server . "; dbname=" . $this->database, $this->user, $this->password);
                 self::$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 self::$connection->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
                 self::$connection->setAttribute(PDO::ATTR_PERSISTENT, true);
@@ -50,7 +50,7 @@ class DataBase {
     * @return void
     */
     public function Disconnect() {
-        self->connection = null;
+        self::$connection = null;
     }
 
     /**
@@ -156,21 +156,6 @@ class DataBase {
             }
             die();
             return false;
-        }
-    }
-    
-    public function NextValSequence($sequence) {
-        try {
-            $stmt = $this->getConnection()->prepare("SELECT nextval(:sequence)");
-            $stmt->execute($sequence);
-            return $stmt->fetch(PDO::FETCH_ASSOC);
-        } catch (PDOException $ex) {
-            if ($this->debug) {
-                echo "<b>Error on NextValSequence():</b> " . $ex->getMessage() . "<br />";
-                echo "<br /><b>SEQUENCE: </b>" . $sequence . "<br />";                
-            }
-            die();
-            return null;
         }
     }
 }

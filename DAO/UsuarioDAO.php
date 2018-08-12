@@ -1,8 +1,8 @@
 <?php
 
 require_once("DataBase.php");
-require_once(".././Model/Usuario.php");
-require_once(".././Model/DadosBancario.php");
+require_once("./Model/Usuario.php");
+require_once("./Model/DadosBancario.php");
 
 class UsuarioDAO {
 
@@ -17,11 +17,10 @@ class UsuarioDAO {
 
 	public function cadastrarDadosBancario($dadosBancario) {
 		$sql = "INSERT INTO cadastros.dados_bancario(id, agencia, conta, informacoes_complementares, id_banco)"
-    				. " VALUES (:id, :agencia, :conta, :informacoes_complementares, :id_banco);"
+    				. " VALUES (nextval('".self::$dadosBancarioSequence."'), :agencia, :conta, :informacoes_complementares, :id_banco)";
     	$params = array(
-    		':id' => $this->pdo->NextValSequence($dadosBancarioSequence),
-    		':agencia' => $dadosBancario->getAgencia();
-    		':conta' => $dadosBancario->getConta();
+    		':agencia' => $dadosBancario->getAgencia(),
+    		':conta' => $dadosBancario->getConta(),
     		':informacoes_complementares' => $dadosBancario->getInformacoesComplementares(),
     		':id_banco' => $dadosBancario->getBanco()->getId()
     	);
@@ -32,22 +31,22 @@ class UsuarioDAO {
 	public function cadastrarUsuario($usuario) {
 		$this->pdo->BeginTransaction();
 
-		$resultadoCadastroDadosBancario = $this->cadastrarDadosBancario($usuario->getDadosBancario());
+		$dadosBancario = $usuario->getDadosBancario();
+        $resultadoCadastroDadosBancario = $this->cadastrarDadosBancario($dadosBancario);
 		if (!$resultadoCadastroDadosBancario) {
 			die("Erro ao cadastrar os Dados Bancários do Usuário.");
 		}
 
-		$sql = "INSERT INTO cadastros.usuario(id, nome, cpf, email, senha, ativo, id_dados_bancario)"
-					. " VALUES (:id, :nome, :cpf, :email, :senha, :ativo, :administrador, :id_dados_bancario)";
+		$sql = "INSERT INTO cadastros.usuario(id, nome, cpf, email, senha, ativo, administrador, id_dados_bancario)"
+					. " VALUES (nextval('".self::$usuarioSequence."'), :nome, :cpf, :email, :senha, :ativo, :administrador, :id_dados_bancario)";
 		$params = array(
-    		':id' => $this->pdo->NextValSequence($usuarioSequence),
     		':nome' => $usuario->getNome(),
     		':cpf' => $usuario->getCpf(),  		
     		':email' => $usuario->getEmail(),
     		':senha' => $usuario->getSenha(),
-    		':ativo' => TRUE,
-    		':administrador' => FALSE,
-    		':id_dados_bancario' => $pdo->GetLastID()
+    		':ativo' => 1,
+    		':administrador' => 0,
+    		':id_dados_bancario' => $this->pdo->GetLastID()
     	);
     	$resultadoCadastroUsuario = $this->pdo->ExecuteNonQuery($sql, $params);
 

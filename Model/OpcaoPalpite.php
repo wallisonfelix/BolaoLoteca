@@ -1,10 +1,12 @@
 <?php
 
-abstract class OpcaoPalpite extends BasicEnum {
+require_once("Util/BasicEnum.php");
 
-    const VITORIA_MANDANTE = 1;
-    const EMPATE = 1;
-    const VITORIA_VISITANTE = 3;
+class OpcaoPalpite extends BasicEnum {
+
+    public const VITORIA_MANDANTE = 1;
+    public const EMPATE = 2;
+    public const VITORIA_VISITANTE = 3;
     
 }
 
