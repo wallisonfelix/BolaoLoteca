@@ -18,15 +18,28 @@ class BancoDAO {
 					. " VALUES (nextval('".self::$bancoSequence."'), :codigo, :nome)";
 		$params = array(
     		':codigo' => $banco->getCodigo(),
-    		':nome' => $usuario->getNome()    		
+    		':nome' => $banco->getNome()    		
     	);
     
     	return $this->pdo->ExecuteNonQuery($sql, $params);;
 	}
 
+    public function editarBanco($banco) {        
+        $sql = "UPDATE cadastros.banco"
+                    . " SET codigo = :codigo, nome = :nome"
+                    . " WHERE id = :id";
+        $params = array(
+            ':codigo' => $banco->getCodigo(),
+            ':nome' => $banco->getNome(),
+            ':id' => $banco->getId(),
+        );
+    
+        return $this->pdo->ExecuteNonQuery($sql, $params);;
+    }
+
     public function listarBanco($banco) {        
         $sql = "SELECT id, codigo, nome FROM cadastros.banco"
-                    . " WHERE nome LIKE :nome";
+                    . " WHERE nome ILIKE :nome ORDER BY codigo";
         $params = array(
             ':nome' => "%{$banco->getNome()}%"          
         );
@@ -45,7 +58,38 @@ class BancoDAO {
         }
 
         return $listaBanco;
+    }
 
+    public function obterBancoPorId($idBanco) {        
+        $sql = "SELECT id, codigo, nome FROM cadastros.banco"
+                    . " WHERE id = :id";
+        $params = array(
+            ':id' => $idBanco
+        );
+    
+        $queryBancoResultado = $this->pdo->ExecuteQueryOneRow($sql, $params);
+
+        $banco = null;
+        if (!empty($queryBancoResultado)) {
+            $banco = new Banco();
+
+            $banco->setId($queryBancoResultado["id"]);
+            $banco->setCodigo($queryBancoResultado["codigo"]);    
+            $banco->setNome($queryBancoResultado["nome"]);
+        }
+        
+        return $banco;        
+    }
+
+    public function quantidadeOutrosBancosPorCodigo($idBanco, $codigo) { 
+        $sql = "SELECT count(1) FROM cadastros.banco"
+                    . " WHERE id != :id AND codigo = :codigo";
+        $params = array(
+            ':id' => $idBanco,
+            ':codigo' => $codigo
+        );
+    
+        return $this->pdo->ExecuteQueryCount($sql, $params);
     }
 }
 ?>

@@ -158,4 +158,23 @@ class DataBase {
             return false;
         }
     }
+
+    public function ExecuteQueryCount($sql, $params = null) {
+        try {
+            $stmt = $this->getConnection()->prepare($sql);
+            $stmt->execute($params);
+            return $stmt->fetchColumn();
+        } catch (PDOException $ex) {
+            if ($this->debug) {
+                echo "<b>Error on ExecuteQueryCount():</b> " . $ex->getMessage() . "<br />";
+                echo "<br /><b>SQL: </b>" . $sql . "<br />";
+                ;
+                echo "<br /><b>Parameters: </b>";
+                print_r($params) . "<br />";
+                ;
+            }
+            die();
+            return null;
+        }
+    }
 }

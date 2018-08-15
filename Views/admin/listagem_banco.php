@@ -1,12 +1,11 @@
 <?php
 
 require_once(".././Controller/BancoController.php");
-require_once(".././DAO/BancoDAO.php");
 require_once(".././Model/Banco.php");
 
   $bancoController = new BancoController();
 
-  $bancos;
+  $bancos = [];
 
   if (filter_input(INPUT_POST, "btnListar", FILTER_SANITIZE_STRING)) {    
     $bancoFiltros = new Banco();
@@ -48,7 +47,7 @@ require_once(".././Model/Banco.php");
           </div>
         </div>
 
-        <input type="submit" class="btn btn-primary btn-block" name="btnListar" value="Listar"/>
+        <input type="submit" class="btn btn-primary btn-block" name="btnListar" value="Listar"/>        
       </form>
 
   </div>
@@ -59,19 +58,21 @@ require_once(".././Model/Banco.php");
     <div class="card-body">
       <div class="table-responsive">
         <?php
-          if (isset($bancos)) {
+          if (!empty($bancos)) {
         ?>
           <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>
               <tr>
                 <th>Código</th>
                 <th>Nome</th>              
+                <th></th>
               </tr>
             </thead>
             <tfoot>
               <tr>
                 <th>Código</th>
                 <th>Nome</th>              
+                <th></th>
               </tr>
             </tfoot>
             <tbody>
@@ -80,8 +81,11 @@ require_once(".././Model/Banco.php");
               ?>
                 <tr>
                   <td><?= $banco->getCodigo(); ?></td>
-                  <td><?= $banco->getNome(); ?></td>
-                  <td></td>
+                  <td><?= $banco->getNome(); ?></td> 
+                  <td>
+                    <a href="?pagina=visualizacao_banco&idBanco=<?= $banco->getId(); ?>" ><img src=".././images/view.png" alt="Visualizar Banco" class="img-fluid rounded" height="20" width="20"/></a>
+                    <a href="?pagina=edicao_banco&idBanco=<?= $banco->getId(); ?>" ><img src=".././images/edit.png" alt="Editar Banco" class="img-fluid rounded" height="20" width="20" /></a>
+                    <a href="#" ><img src=".././images/remove.png" alt="Excluir Banco" class="img-fluid rounded" height="20" width="20" /></a></td>
                 </tr> 
               <?php
                 }
